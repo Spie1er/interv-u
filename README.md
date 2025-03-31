@@ -52,4 +52,4 @@ Contributions are welcome! Feel free to submit pull requests or report issues.
 
 ## License
 
-MIT License © 2025 Interv-U Team
+Project is done under the course of JavaScript Mastery
