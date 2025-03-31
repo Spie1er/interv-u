@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: 'AI-powered interview simulator'
 }
 
-export default function RootLayout({
+export default function AppLayout({
   children
 }: Readonly<{
   children: ReactNode
