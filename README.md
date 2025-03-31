@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Interv-U
 
-## Getting Started
+**Interv-U** is an AI-powered technical interview simulator designed to help candidates prepare for job interviews effectively. It provides a realistic interview environment with AI-driven questions, feedback, and evaluations.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **AI-Powered Interviews**: Get personalized questions based on your skills.
+- **Real-Time Feedback**: Receive instant AI-driven insights and suggestions.
+- **Multi-Step Interview Process**: Simulates technical rounds including coding, system design, and behavioral questions.
+- **Progress Tracking**: Monitor your improvements over multiple sessions.
+- **Dark Mode Support**: Seamless UI with Next.js and Tailwind CSS.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend**: React, Next.js, Tailwind CSS
+- **Backend**: Firebase, Firebase Admin SDK
+- **State Management**: React Hook Form
+- **UI Components**: Radix UI, Lucide React
+- **Validation**: Zod
+- **Authentication**: Firebase Auth
+- **Notifications**: Sonner
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Installation
 
-## Learn More
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/interv-u.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd interv-u
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+4. Start the development server:
+   ```sh
+   npm run dev
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `npm run dev` - Starts the development server.
+- `npm run build` - Builds the production-ready app.
+- `npm run start` - Starts the production server.
+- `npm run lint` - Runs ESLint to check for code issues.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+Contributions are welcome! Feel free to submit pull requests or report issues.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT License © 2025 Interv-U Team
