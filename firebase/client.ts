@@ -3,7 +3,7 @@ import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCePLP24ZHA3IhqCx1VYFEE2BMvSWtHwoA',
+  apiKey: process.env.FIREBASE_CLIENT_API_KEY,
   authDomain: 'interv-u.firebaseapp.com',
   projectId: 'interv-u',
   storageBucket: 'interv-u.firebasestorage.app',
