@@ -6,7 +6,7 @@ import Link from 'next/link'
 import DisplayTechIcons from '@/components/DisplayTechIcons'
 
 const InterviewCard = ({
-  interviewId,
+  id,
   userId,
   role,
   type,
@@ -18,6 +18,7 @@ const InterviewCard = ({
   const formatedDate = dayjs(
     feedback?.createdAt || createdAt || Date.now()
   ).format('MMM D, YYYY')
+
   return (
     <div className='card-border w-[360px] max-md:w-full min-h-96'>
       <div className='card-interview'>
@@ -59,11 +60,7 @@ const InterviewCard = ({
           <DisplayTechIcons techStack={techstack} />
           <Button className='btn-primary'>
             <Link
-              href={
-                feedback ?
-                  `/interview/${interviewId}/feedback`
-                : `/interview/${interviewId}`
-              }
+              href={feedback ? `/interview/${id}/feedback` : `/interview/${id}`}
             >
               {feedback ? 'Check Feedback' : 'View Interview'}
             </Link>

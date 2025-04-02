@@ -4,11 +4,11 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { dummyInterviews } from '@/constants'
 import InterviewCard from '@/components/InterviewCard'
+import { getCurrentUser } from '@/lib/actions/auth.action'
 import {
-  getCurrentUser,
   getInterviewByUserId,
   getLatestInterviews
-} from '@/lib/actions/auth.action'
+} from '@/lib/actions/general.action'
 
 const HomePage = async () => {
   const user = await getCurrentUser()
@@ -21,6 +21,8 @@ const HomePage = async () => {
 
   const hasPastInterviews = !!userInterviews?.length
   const hasUpcomingInterviews = !!latestInterviews?.length
+
+  console.log(userInterviews)
   return (
     <>
       {/*Hero Section*/}
