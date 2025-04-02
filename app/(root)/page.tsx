@@ -4,8 +4,23 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { dummyInterviews } from '@/constants'
 import InterviewCard from '@/components/InterviewCard'
+import {
+  getCurrentUser,
+  getInterviewByUserId,
+  getLatestInterviews
+} from '@/lib/actions/auth.action'
 
-const HomePage = () => {
+const HomePage = async () => {
+  const user = await getCurrentUser()
+
+  //Parallel Requests
+  const [userInterviews, latestInterviews] = await Promise.all([
+    await getInterviewByUserId(user?.id!),
+    await getLatestInterviews({ userId: user?.id! })
+  ])
+
+  const hasPastInterviews = !!userInterviews?.length
+  const hasUpcomingInterviews = !!latestInterviews?.length
   return (
     <>
       {/*Hero Section*/}
@@ -33,26 +48,28 @@ const HomePage = () => {
       <section className='flex flex-col gap-6 mt-8'>
         <h2>Your Interviews</h2>
         <div className='interviews-section'>
-          {dummyInterviews.map((interview) => (
-            <InterviewCard
-              {...interview}
-              key={`yourInterview-${interview.id}`}
-            />
-          ))}
-          {/*<p>You haven't taken any interviews yet</p>*/}
+          {hasPastInterviews ?
+            userInterviews.map((interview) => (
+              <InterviewCard
+                {...interview}
+                key={`yourInterview-${interview.id}`}
+              />
+            ))
+          : <p>You haven't taken any interviews yet</p>}
         </div>
       </section>
 
       <section className='flex flex-col gap-6 mt-11'>
         <h2>Take an Interview</h2>
         <div className='interviews-section'>
-          {dummyInterviews.map((interview) => (
-            <InterviewCard
-              {...interview}
-              key={`otherInterviews-${interview.id}`}
-            />
-          ))}
-          {/*<p>There are no interviews available</p>*/}
+          {hasUpcomingInterviews ?
+            latestInterviews.map((interview) => (
+              <InterviewCard
+                {...interview}
+                key={`yourInterview-${interview.id}`}
+              />
+            ))
+          : <p>There are no interviews available</p>}
         </div>
       </section>
     </>
