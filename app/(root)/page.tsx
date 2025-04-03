@@ -1,8 +1,6 @@
-import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { dummyInterviews } from '@/constants'
 import InterviewCard from '@/components/InterviewCard'
 import { getCurrentUser } from '@/lib/actions/auth.action'
 import {
@@ -22,7 +20,6 @@ const HomePage = async () => {
   const hasPastInterviews = !!userInterviews?.length
   const hasUpcomingInterviews = !!latestInterviews?.length
 
-  console.log(userInterviews)
   return (
     <>
       {/*Hero Section*/}
@@ -34,7 +31,7 @@ const HomePage = async () => {
           </p>
 
           <Button asChild className='btn-primary max-sm:w-full'>
-            <Link href='/interview'>Start an Interview</Link>
+            <Link href='/interview'>Create an Interview</Link>
           </Button>
         </div>
         <Image
