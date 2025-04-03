@@ -35,7 +35,7 @@ const HomePage = async () => {
           </Button>
         </div>
         <Image
-          src='/robot.png'
+          src='/robot2.png'
           alt='robot'
           width={400}
           height={400}

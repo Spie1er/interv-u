@@ -31,7 +31,8 @@ const InterviewCard = async ({
             <p className='badge-text'>{normalizedType}</p>
           </div>
           <Image
-            src={getRandomInterviewCover()}
+            // src={getRandomInterviewCover()}
+            src={'/interv.png'}
             alt='cover image'
             width={90}
             height={90}
